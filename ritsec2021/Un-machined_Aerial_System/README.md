@@ -6,19 +6,19 @@ Do the best you can!
 
 We are given a 64 bit ELF.
 
-```bash
+```
 $ file hard 
 hard: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=51272a32b01c5527bab1b8c8b42bea75b45e1539, for GNU/Linux 4.4.0, stripped
 ```
 
 Running the binary we get the following output:
-```bash
+```
 $ ./hard
 Fill in the rest of the flag: RS{
 ```
 
 If we try to enter a wrong flag we get:
-```bash
+```
 $ ./hard 
 Fill in the rest of the flag: RS{testtest
 The inputted flag was RS{testtest}
@@ -75,8 +75,8 @@ undefined8 main(void)
 }
 ```
 
-Further down the binary we find other functions.
-It's really not the case to try and understand what those functions are doing so lets use angr.
+Analyzing the binary we find other functions.
+I thought it was not the case to understand what those functions were doing so i just used angr.
 
 ```python
 #!/usr/bin/env python3
